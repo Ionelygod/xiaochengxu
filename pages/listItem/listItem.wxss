@@ -1,0 +1,33 @@
+/* pages/listItem/listItem.wxss */
+.temContaioner{
+	display: flex;
+	flex-direction: column;
+}
+
+.company{
+	font-size: 36rpx;
+	font-weight: 700;
+	margin-left: 10rpx;
+}
+.content_img{
+	width: 100%;
+	height: 420rpx;
+}
+.content{
+	font-size:16px;
+	color:#666;
+	text-indent:16px;
+	line-height:28px
+}
+.star_count_conationer{
+	width: 100%;
+}
+.star_count_conationer image{
+	width: 32rpx;
+	height: 32rpx;
+	vertical-align: middle;
+}
+.star_count_conationer text{
+	font-size: 26rpx;
+	vertical-align: middle;
+}

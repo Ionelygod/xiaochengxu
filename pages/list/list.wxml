@@ -1,0 +1,26 @@
+
+<!--pages/list/list.wxml-->
+<import src="/pages/listItem/listItem.wxml" />
+<view>
+  <swiper indicator-dots indicator-color='white' indicator-active-color='#EDD99E' circular autoplay>
+    <swiper-item>
+      <image src='/images/detail/carousel/01.jpg' />
+    </swiper-item>
+    <swiper-item>
+      <image src='/images/detail/carousel/02.jpg' />
+    </swiper-item>
+		<swiper-item>
+      <image src='/images/detail/carousel/03.jpg' />
+    </swiper-item>
+		    <swiper-item>
+      <image src='/images/detail/carousel/04.jpg' />
+    </swiper-item>
+</swiper>
+
+	<block wx:for="{{datasArr}}" wx:key="{{index}}">
+		<view catchtap='goTodetail' data-index="{{index}}">
+			<template is="listItem1" data="{{...item}}" />
+		</view>
+	</block>
+
+</view>

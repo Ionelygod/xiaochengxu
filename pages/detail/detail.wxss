@@ -1,0 +1,38 @@
+/* pages/detail/detail.wxss */
+.detailContaioner{
+	display: flex;
+	flex-direction: column;
+}
+.detail_header{
+	width: 100%;
+	height: 420rpx;
+}
+.detail_collection_share{
+	width: 100%;
+	position: relative;
+}
+.col_share_img{
+	float: right;
+	margin-right: 10rpx;
+}
+.line{
+	position: absolute;
+	left: 5%;
+	top: 45rpx;
+	z-index: -1;
+	width: 90%;
+	height: 1rpx;
+	background: #eee;
+}
+.col_share_img image{
+	width: 90rpx;
+	height: 90rpx;
+	margin-right: 10rpx;
+}
+.detail-content{
+	margin-top: 40rpx;
+	font-size:16px;
+	color:#666;
+	text-indent:16px;
+	line-height:28px
+}

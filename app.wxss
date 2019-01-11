@@ -1,0 +1,15 @@
+.avatar_date{
+	width: 100%;
+	padding: 10px;
+}
+.avatar_date image{
+	width: 60rpx;
+	height: 60rpx;
+	vertical-align: middle;
+	margin-left: 10rpx;
+}
+.avatar_date text{
+	font-size: 26rpx;
+	vertical-align: middle;
+	margin-left: 8rpx;
+}

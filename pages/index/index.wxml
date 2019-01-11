@@ -1,0 +1,8 @@
+<!--pages/index/index.wxml-->
+<view class='viewContainer'>
+  <image src='/images/index/cart.jpg'></image>
+  <text class='nickName'>hello {{nickName}}</text>
+  <view catchtap='handleParent' class='goStudy'>
+    <text>{{msg}}</text>
+  </view>
+</view>
