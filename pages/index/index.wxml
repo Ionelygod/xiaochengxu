@@ -1,8 +1,11 @@
 <!--pages/index/index.wxml-->
 <view class='viewContainer'>
-  <image src='/images/index/cart.jpg'></image>
-  <text class='nickName'>hello {{nickName}}</text>
-  <view catchtap='handleParent' class='goStudy'>
-    <text>{{msg}}</text>
-  </view>
+	<image wx:if='{{userInfo.avatarUrl}}' src='{{userInfo.avatarUrl}}'></image>
+	<button wx:else open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">
+		获取用户信息
+	</button>
+		<text class='nickName' catchtap='bindGetUserInfo'>hello {{userInfo.nickName}}</text>
+		<view catchtap='handleParent' class='goStudy'>
+			<text>{{msg}}</text>
+		</view>
 </view>

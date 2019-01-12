@@ -2,9 +2,9 @@
 	"pages": [
 		"pages/index/index",
 		"pages/list/list",
+		"pages/detail/detail",
 		"pages/listItem/listItem",
-		"pages/detail/detail"
-
+		"pages/movie/movie"
 	],
 	"window": {
 		"navigationBarBackgroundColor": "#EDD99E",
@@ -12,5 +12,23 @@
 		"navigationBarTitleText": "wechat",
 		"backgroundColor": "#eee",
 		"backgroundTextStyle": "light"
-	}
+	},
+		"tabBar": {
+			"list": [
+				{
+					"pagePath": "pages/list/list",
+					"text": "文章",
+					"color":"blank",
+					"iconPath":"/images/tab/yuedu.png",
+					"selectedIconPath":"/images/tab/yuedu_hl.png"
+				},
+				{
+					"pagePath": "pages/movie/movie",
+					"text": "电影",
+					"color": "blank",
+					"iconPath": "/images/tab/dianying.png",
+					"selectedIconPath": "/images/tab/dianying_hl.png"
+				}
+			]
+		}
 }

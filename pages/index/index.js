@@ -5,22 +5,52 @@ Page({
    * 页面的初始数据
    */
   data: {
+		index_img:'',
     msg:'开启小程序之旅',
-    nickName:'Abduction'
+		userInfo:{
+			nickName:'请先获取用户信息'
+		}
   },
   handleParent(){
-    wx.navigateTo({
+		wx.switchTab({
       url:'/pages/list/list'
     })
   },
-
+	onGotUserInfo(msg){
+		console.log(msg.detail)
+		console.log(this)
+		if (msg.detail.userInfo){
+			this.setData({
+				userInfo:msg.detail.userInfo
+			})
+		}
+	},
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+		// 可以通过 wx.getSetting 先查询一下用户是否授权了 "scope.record" 这个 scope
+		// wx.getSetting({
+		// 	success(res) {
+		// 		if (!res.authSetting['scope.userInfo']) {
+		// 			wx.authorize({
+		// 				scope: 'scope.userInfo',
+		// 				success() {
+		// 					// 用户已经同意小程序使用录音功能，后续调用 wx.startRecord 接口不会弹窗询问
+		// 					wx.openSetting()
+		// 				}
+		// 			})
+		// 		}
+		// 	}
+		// })
+		// 获取登录用户信息
+		wx.getUserInfo({
+			success: (data) => {
+				this.setData({ userInfo: data.userInfo });
+			}
+		})
 
-  },
-
+	}	,
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

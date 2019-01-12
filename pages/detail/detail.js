@@ -1,6 +1,8 @@
 // pages/detail/detail.js
 const datas = require('../../datas/list-data.js')
 const {list_data} = datas
+const appData = getApp()
+console.log(appData)
 
 Page({
 	
@@ -10,7 +12,8 @@ Page({
 	 */
 	data: {
 		detailObj:{},
-		isCollection:false
+		isCollection:false,
+		isMusicPlay:false
 	},
 	handleColltion(){
 		const isCollection = !this.data.isCollection
@@ -35,6 +38,23 @@ Page({
 		})
 
 	},
+	handleMusicPlay(){
+		const isMusicPlay = !this.data.isMusicPlay
+		this.setData({
+			isMusicPlay: isMusicPlay
+		})
+		const { dataUrl, title, coverImgUrl} = this.data.detailObj.music
+		if(isMusicPlay){
+			// 播放
+			wx.playBackgroundAudio({
+				dataUrl, title, coverImgUrl
+			})
+
+		}else{
+			//暂停
+			wx.stopBackgroundAudio()
+		}
+	},
 
 	/**
 	 * 生命周期函数--监听页面加载
@@ -54,6 +74,32 @@ Page({
 				isCollection:true
 			})
 		}
+
+		if (index === appData.data.pauseIndex && appData.data.isPayl){
+			this.setData({
+				isMusicPlay:true
+			})
+		}
+		wx.onBackgroundAudioPlay(() => {
+			this.setData({
+				isMusicPlay: true
+			})
+			appData.data.pauseIndex = index;
+			appData.data.isPayl = true;
+
+		})
+
+		wx.onBackgroundAudioPause(() => {
+			this.setData({
+				isMusicPlay: false
+			})
+			appData.data.isPayl = false;
+
+		})
+		
+		
+		
+		
 	},
 
 	/**
